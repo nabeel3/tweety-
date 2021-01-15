@@ -16,8 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('profile/{user}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile');
+
+Route::Post('/follow/{user:name}', [App\Http\Controllers\FollowController::class, 'store']);
+
+
+Route::get('/tweets',[\App\Http\Controllers\TweetController::class, 'index'])->name('home');
 Route::Post('/tweets',[\App\Http\Controllers\TweetController::class, 'store'])->name('tweets');
+
+
+
+
+
+
+
+

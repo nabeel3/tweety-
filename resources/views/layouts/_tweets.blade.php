@@ -1,14 +1,14 @@
+@foreach($tweet as $tweet)
 <div class="card">
     <div class="card-body">
         <div class="card-title">
 
-            <a href="{{route('profile', $tweet->user->name)}}" >
-            <img class=" mw-1 " style="width: 30px;" src="{{$tweet->user->avatar}}">
-            </a>
+
+                <img class=" mw-1 " style="width: 30px;" src="{{$tweet->user->avatar}}">
         </div>
-        <a href="{{route('profile', $tweet->user->name)}}" >
-        <h5 class="card-title">{{$tweet->user->name}}</h5>
-        </a>
+
+            <h5 class="card-title">{{$tweet->user->name}}</h5>
+
 
         <p class="card-text">{{$tweet->body}}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -30,3 +30,4 @@
 </div>
 <div>
 </div>
+  @endforeach

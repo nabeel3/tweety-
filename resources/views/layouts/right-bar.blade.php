@@ -7,7 +7,7 @@
             </a>
             @foreach( auth()->user()->follows as $user)
 
-            <a href="#" class="list-group-item list-group-item-action"><img class=" mw-1 " style="width: 30px;" src="{{$user->avatar}}"> {{$user->name}}
+            <a href="{{route('profile', $user->name)}}" class="list-group-item list-group-item-action"><img class=" mw-1 " style="width: 30px;" src="{{$user->avatar}}"> {{$user->name}}
 
             </a>
                 @endforeach
